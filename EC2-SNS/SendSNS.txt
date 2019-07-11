@@ -1,0 +1,14 @@
+Create an EC2 instance
+SSH to it
+sudo easy_install pip
+sudo pip install boto3
+python
+>>> import boto3
+>>> sns = boto3.client('sns')
+>>> phone_number = '+1xxxxxxxxx'
+sns.publish(Message='Hello from SNS',PhoneNumber=phone_number)
+
+Output :
+
+{'ResponseMetadata': {'RetryAttempts': 0, 'HTTPStatusCode': 200, 'RequestId': 'b944b2d9-f5ec-5a3a-83c4-e77840a2f4bf', 'HTTPHeaders': {'x-amzn-requestid': 'b944b2d9-f5ec-5a3a-83c4-e77840a2f4bf', 'date': 'Thu, 11 Jul 2019 22:07:10 GMT', 'content-length': '294', 'content-type': 'text/xml'}}, u'MessageId': '538dcff2-ecc0-5f53-b52d-9a53598e11d6'}
+>>> 
